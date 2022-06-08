@@ -1,23 +1,28 @@
-1. (urmariti exemplul din curs) 
-Sa se creeze un proiect maven in care se cere sa se creeze copii ale unui fisier.
-Programul va primi de la tastatura numele fisierului pentru care se va face o copie. 
-Programul va verifica daca exista fisierul pentru care se cere copia, iar daca nu, se va arunca o exceptie. (Creeati voi exceptia)
-In cazul in care exista deja o copie a fisierului se va concatena textul "Copy" la inceputul acestuia.
+
+Problema 1.
+Creati un proiect maven in care veti crea o clasa (separata de main) unde veti avea ca field o lista de string-uri.
+Clasa va avea un constructor primind o astfel de lista si o metoda care calculeaza frecventa de aparitie a unui string in lista.
+Metoda va primi un parametru de tip String si va returna un int (Numarul de aparitii ale cuvantului in lista).
+Pentru aceasta clasa si metoda sa va crea o clasa de test cu metoda aferenta in care se va testa metoda ce returneaza frecventa de aparitie a cuvantului.
+
+In metoda main se va crea un exercitiun simplu in care se va citi o lista de string-uri dintr-un fisier (plasat in folderul proiectului) 
+si un string de la tastatura pentru care se va calcula frecventa de aparitie. Mai departe veti crea jar-ul folosind plugin-ul de maven.
+Cand se va executa comanda "mvn clean install" se va genera si jar-ul in folderul "target" creat de maven.  (Metoda main nu se va testa folosind Unit Tests)
+
+Problema 2. (Optionala).
+Se va simula un calcul de salarii pentru angajati.
+Vom avea un fisier unde vom tine datele angajatilor, precum ID, Nume, Salariu Brut.
 Exemplu:
-Scenariu 1. Se introduce numele fisierului "fisier.txt" -> Copia va fi "Copy fisier.txt"
-Scenariu 2. Se introduce din nou numele fisierului "fisier.txt" dar deja exisa "Copy fisier.txt". Atunci noua copie va fi "Copy Copy fisier.txt"
-Scenariu 3. Se introduce din nou numele fisierului "fisier.txt" dar deja exisa "Copy Copy fisier.txt". Atunci noua copie va fi "Copy Copy Copy fisier.txt"
-etc....
+
+1231,Ion Ion,3500
+1233,Ion Pop,3000
+....
 
 
-2. Sa se scrie un program prin care se creeaza o clasa de ServiciiCitire prin care se vor citi date din fisiere.
-In aceasta clasa se cere sa se creeze
-    a. O metoda care verifica daca un fisier este gol sau nu. (metoda va primi ca parametru numele/calea fisierului si va returna boolean)
-    b. O metoda care verifica daca un anumit fisier contine un anumit cuvant. (metoda ca primi ca parametrii numele/calea fisierului, un String ce va reprezenta cuvantul cautat si va returna boolean).
-    
-Se cere sa se scrie teste unitare pentru aceasta clasa. (Se va creea clasa ServiciiCitireTest in pachetul corespunzator)
-Incercati sa creeati pentru fiecare metode 2 teste (un caz pozitiv si un caz negativ).
-Sugestii:
-Initializati intr-o metoda adnotata cu @Before initializarea clasei.
-In metodele de @Test apelati metodele corespunzatoare din clasa ServiciiCitire si verificati cu assertTrue / assertFalse rezultatele.
+Acest fisier va fi citit intr-o clasa printr-un bloc static. Se va tine evidenta lor intr-o lista de string-uri in aceeasi clasa. Se va crea o metoda
+    statica ce va converti lista de string-uri intr-o lista de Persoane.
+Se va crea o clasa persoana cu fieldurile aferent, id, nume, salariu brut (Va exista o metoda ce calculeaza salariul net pe baza salariului brut)
+
+In metoda main se va apela metoda ce converteste lista de String-uri citita in lista de personne si se vor afisa pentru fiecare persoana salariul net.
+
 
